@@ -1,0 +1,27 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int account = 0;
+
+        Queue<int> purchases = new Queue<int>();
+
+        purchases.Enqueue(10);
+        purchases.Enqueue(15);
+        purchases.Enqueue(40);
+        purchases.Enqueue(5);
+        purchases.Enqueue(19);
+        purchases.Enqueue(32);
+
+
+        while (purchases.Count > 0)
+        {
+            Console.WriteLine($"На вашем счете: {account}.");
+            Console.WriteLine("Нажмите любую клавишу чтобы обслужить клиента.");
+            Console.ReadKey();
+            Console.Clear();
+            account += purchases.Dequeue();
+            Console.WriteLine($"Клиент обслужен! На вашем счете: {account}.");
+        }
+    }
+}
